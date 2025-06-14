@@ -639,12 +639,8 @@
             "estoy confundido con la donación", "me da miedo la donación", "estoy triste por la donación",
             "no puedo con esto", "estoy abrumado", "mi ser querido murió", "acaba de fallecer",
             "mi hermano fallecio", "a mi mama la acaban de declarar con muerte cerebral",
-            "no se si mi familiar queria donar", "me estan pidiendo autorizar la donacion y no se que hacer",
-            "mi hermano fallecio y me hablaron del hospital", "no estoy seguro de decir que si",
-            "estoy confundido con la donacion", "me da miedo la donacion", "estoy triste por la donacion",
-            "mi ser querido murio", "acaba de fallecer",
-            "mi mama acaba de fallecer", "mi papa acaba de morir", "mi hijo fallecio", // More direct grief triggers
-            "estoy devastado", "no se que hacer"
+            "no se si quiero donar", "tengo dudas sobre donar",
+            "me da miedo", "no estoy seguro", "no quiero donar", "no quiero"
         ];
 
         // New Module: "Donación de Familiar Fallecido"
@@ -1065,6 +1061,8 @@
                 return; // Stop further processing
             }
 
+                      
+
             // Priority 2: If a family donation module is active, handle its actions (buttons only)
             if (currentFamilyDonationStep) {
                 // User typing directly while in family donation module: treat as "ask another question" and exit module
@@ -1275,7 +1273,7 @@
                 systemInstruction: { parts: [{ text: systemPrompt }] }
             };
 
-            const apiKey = ""; 
+            const apiKey = "AIzaSyBFrsqmWqs-ypSPfdDt7l-2F6XDCkKCoxA"; 
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
             try {
@@ -1337,7 +1335,7 @@
                 }
             };
 
-            const apiKey = ""; 
+            const apiKey = "AIzaSyBFrsqmWqs-ypSPfdDt7l-2F6XDCkKCoxA"; 
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
             try {
@@ -1492,8 +1490,7 @@
 
             const startButton = document.createElement('button');
             startButton.textContent = "Sí, empezar el juego";
-            startButton.className = `px-4 py-2 rounded-lg bg-[var(--vida-module-btn-bg)] text-[var(--vida-module-btn-text)] text-sm font-medium 
-                                    hover:bg-[var(--vida-module-btn-hover)] transition-colors shadow-sm`;
+            startButton.className = `px-4 py-2 rounded-lg bg-[var(--vida-module-btn-bg)] text-[var(--vida-module-btn-text)] font-bold shadow-md hover:bg-[var(--vida-module-btn-hover)] transition-colors`;
             startButton.onclick = async () => {
                 addMessageToChat('user', startButton.textContent); // Add button text as user message
                 suggestedQuestionsContainer.classList.add('hidden'); // Hide start buttons
@@ -1556,7 +1553,7 @@
                 }
             };
 
-            const apiKey = ""; 
+            const apiKey = "AIzaSyBFrsqmWqs-ypSPfdDt7l-2F6XDCkKCoxA"; 
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
             try {
